@@ -715,6 +715,13 @@ class Preview extends RelativeLayout implements SurfaceHolder.Callback {
             }
         }
 
+	// hotfix from https://github.com/mbppower/CordovaCameraPreview/issues/53
+        optimalSize = sizes.get(0);
+	for(int i=0;i<sizes.size();i++){
+	    if(sizes.get(i).width > optimalSize.width)
+	        optimalSize = sizes.get(i);
+	}
+
         Log.d(TAG, "optimal preview size: w: " + optimalSize.width + " h: " + optimalSize.height);
         return optimalSize;
     }
