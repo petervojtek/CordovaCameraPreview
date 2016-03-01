@@ -451,7 +451,7 @@ public class CameraActivity extends Fragment {
         if (pictureFile != null) {
             try {
                 FileOutputStream fos = new FileOutputStream(pictureFile);
-                image.compress(Bitmap.CompressFormat.JPEG, 80, fos);
+                image.compress(Bitmap.CompressFormat.JPEG, 90, fos);
                 fos.close();
                 return pictureFile;
             }
